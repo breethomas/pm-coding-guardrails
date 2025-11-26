@@ -21,7 +21,7 @@ Manage Claude Code sessions to avoid context rot while maintaining continuity.
 
 ## Where to Save
 
-**Team Projects (Balance):**
+**Team Projects:**
 ```bash
 .claude/sessions/YYYY-MM-DD-feature-name.md
 # or
@@ -152,7 +152,7 @@ Tell Claude: `Run git log --oneline -10 to see last session progress.`
 
 ## Examples
 
-### Balance - End Session
+### Team Project - End Session
 
 ```bash
 # Create notes
@@ -164,10 +164,10 @@ git commit -m "Session notes: login progress"
 git push
 ```
 
-### Balance - Start Fresh
+### Team Project - Start Fresh
 
 ```markdown
-Continuing Balance login feature.
+Continuing login feature for [project-name].
 
 Context:
 - Read .claude/sessions/2025-11-26-login.md

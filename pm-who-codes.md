@@ -107,7 +107,7 @@ Markdown files > trying to explain everything in chat.
 - Document why, not just what
 - Test enough to be confident it works
 
-### Team Projects (like Balance)
+### Team Projects
 - Follow their workflow religiously
 - Use their tools and conventions
 - Run their quality checks
