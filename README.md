@@ -44,24 +44,35 @@ A set of practical guidelines for PMs to code responsibly with AI assistance, wh
 
 ## How to Use
 
-### Option 1: Integrate with Claude Code Memory System
+### Option 1: Integrate with Claude Code
 
-Add these files to your Claude Code memory system:
+**Add to your context files:**
 
+These files work with any Claude Code setup. Choose what works for you:
+
+**A) Global context** - Available in all projects:
 ```bash
-# Copy to your Claude Code llm-context
-cp *.md ~/.claude/llm-context/coding/
+# Add to your global Claude directory
+cp *.md ~/.claude/
 ```
 
-Then reference them in your project-specific CLAUDE.md:
+**B) Project-specific context** - For a specific codebase:
+```bash
+# Add to your project's .claude directory
+cp *.md /path/to/your-project/.claude/
+```
+
+**C) Reference in instructions:**
+
+In your CLAUDE.md or project instructions, reference these guidelines:
 
 ```markdown
 ## Coding Standards
 
 When working on code:
-- Read pm-who-codes.md for philosophy and approach
-- Follow quality-gates.md checklist before every commit
-- Apply solo-project-standards.md for personal projects
+- Follow pm-who-codes.md for philosophy and approach
+- Use quality-gates.md checklist before every commit
+- Apply solo-project-standards.md for solo projects
 ```
 
 ### Option 2: Use as Reference
