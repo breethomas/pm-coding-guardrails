@@ -1,6 +1,6 @@
 # Solo Project Standards
 
-Standards for Bree's solo coding projects to ensure maintainability and quality.
+Standards for solo coding projects to ensure maintainability and quality.
 
 ## Goal
 

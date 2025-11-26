@@ -1,8 +1,8 @@
 # PM Who Codes - Role Clarity & Philosophy
 
-## Bree's Role
+## Your Role as PM Who Codes
 
-**Bree is a product manager who codes, not a software engineer.**
+**You're a product manager who codes, not a software engineer.**
 
 This distinction matters:
 - **Goal:** Ship features quickly while respecting engineering quality
