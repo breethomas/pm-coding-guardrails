@@ -98,6 +98,75 @@ Fork this repo and adapt the guidelines to your team's:
 - Code review processes
 - Architectural patterns
 
+## Using These Guardrails in Practice
+
+### The Simple Approach (Recommended)
+
+**Just ask Claude to guide you:**
+
+```markdown
+I'm working on [feature] for [project].
+
+Review the pm-coding-guardrails files and guide me through this coding session.
+```
+
+**That's it.** Claude will:
+- Read the relevant guardrail files
+- Tell you what to focus on first
+- Guide you through checkpoints
+- Remind you about quality gates before commits
+- Tell you when to restart sessions
+
+### Specific Scenarios (Advanced)
+
+If you want more control over what Claude focuses on, use these prompts:
+
+**Starting a team project:**
+```markdown
+I'm working on [feature] in a shared codebase with senior engineers.
+
+Context:
+- Review pm-who-codes.md (team project section)
+- Review quality-gates.md for commit standards
+- Match existing patterns exactly
+
+Help me find similar code to match, then break this into small tasks.
+```
+
+**Before committing:**
+```markdown
+Before I commit, let's verify using quality-gates.md:
+- Pattern matching
+- Formatters/linters
+- Tests written and passing
+- All CI checks passed locally
+
+Walk me through the checklist.
+```
+
+**Restarting after context rot:**
+```markdown
+Starting fresh session.
+
+Context:
+- Review session-management.md for approach
+- Read .claude/sessions/[date]-[feature].md from last session
+- Review pm-who-codes.md and quality-gates.md
+
+Confirm you understand where we left off, then continue.
+```
+
+**Solo project:**
+```markdown
+Working on my solo project [name].
+
+Context:
+- Review solo-project-standards.md
+- Review quality-gates.md
+
+Guide me through this session.
+```
+
 ## Core Principles
 
 1. **Consistency > Personal Preference** - Match existing patterns exactly
