@@ -1,152 +1,82 @@
 # Session Management Guide
 
-Practical guidance for managing Claude Code sessions to avoid context rot while maintaining continuity.
+Manage Claude Code sessions to avoid context rot while maintaining continuity.
 
-## Why This Matters
+## When to Restart
 
-**Context rot is real.** After 2-3 big tasks in a session, Claude's output quality degrades. You'll notice:
-- Suggestions get vaguer
-- Claude forgets patterns you established earlier
-- Code quality drops
-- More errors creep in
+**After 2-3 major features, or when you notice:**
+- Claude suggesting patterns different from what you established
+- Having to re-explain things covered earlier
+- Code quality declining
+- More errors or back-and-forth
 
-**The solution:** Document your work, restart your session, load from documentation.
+## Before Restarting: Document
 
-## When to Restart Your Session
+**Create a session notes file capturing:**
 
-### Signs It's Time to Restart
+1. **Accomplished:** Features completed, tests written, bugs fixed, files changed
+2. **Current State:** What's working, tested, deployed/merged
+3. **What's Next:** Immediate steps, known issues, questions for team
+4. **Context for Fresh Session:** Patterns established, decisions made, key info Claude needs
 
-**After 2-3 major features/tasks**, or when you notice:
-- ❌ Claude suggesting patterns different from what you established
-- ❌ Having to re-explain things you covered earlier
-- ❌ Code quality feels lower than the start of session
-- ❌ More back-and-forth to get what you want
+## Where to Save
 
-### Before Restarting: Document Your Work
-
-**Don't just close and restart.** That loses all your progress context. Document first.
-
-## Session Documentation: What to Capture
-
-Create a session notes file documenting:
-
-### 1. What You Accomplished
-- Features completed
-- Tests written
-- Bugs fixed
-- Files changed
-
-### 2. Current State
-- What's working now
-- What's tested
-- What's deployed/merged
-
-### 3. What's Next
-- Immediate next steps
-- Known issues to address
-- Questions for the team (if applicable)
-
-### 4. Context for Fresh Session
-- Patterns you established
-- Decisions you made and why
-- Things Claude should know when you restart
-
-## Where to Save Session Notes
-
-### For Team Projects (like Balance)
-
-**Option A: Project .claude directory**
+**Team Projects (Balance):**
 ```bash
-# Create if doesn't exist
-mkdir -p .claude/sessions
-
-# Save with date
-.claude/sessions/2025-11-26-login-feature.md
+.claude/sessions/YYYY-MM-DD-feature-name.md
+# or
+docs/dev-sessions/YYYY-MM-DD-your-name.md
 ```
 
-**Option B: Project docs directory**
+**Solo Projects:**
 ```bash
-# If team has a docs structure
-docs/dev-sessions/2025-11-26-bree-login.md
+.claude/sessions/YYYY-MM-DD.md
+# or simple
+dev-log.md  # Append to running log
 ```
 
-**Option C: Running dev log**
-```bash
-# Single file you append to
-.claude/dev-log.md
-```
+**Why in project?** Version controlled, visible to team, persists across computers, easy for Claude to find.
 
-**Why in the project?**
-- Version controlled with git
-- Other engineers can see your progress
-- Persists across computers
-- Easy for Claude to find when you restart
+## Session Notes Templates
 
-### For Solo Projects
-
-**Option A: Project .claude directory** (same as team)
-```bash
-.claude/sessions/2025-11-26.md
-```
-
-**Option B: Simple dev-log.md**
-```bash
-# Keep it simple for solo work
-dev-log.md  # Lives in project root
-```
-
-**Why in the project?**
-- Future you needs to remember what you did
-- Version controlled
-- Easy to pick up after weeks away
-
-## Session Notes Template
-
-### For Team Projects
+### Team Project Template
 
 ```markdown
-# Dev Session - [Date]
+# [Date] - [Feature]
 
 ## Context
-Working on: [Feature name]
-Related to: [Linear issue, PR, etc.]
+Working on: [Feature]
+Related: [Issue/PR]
 
-## What I Accomplished
-- [Completed task 1]
-- [Completed task 2]
-- [Completed task 3]
+## Accomplished
+- [Task 1]
+- [Task 2]
 
 ## Files Changed
-- path/to/file1.tsx (added login form component)
-- path/to/file2.test.tsx (added tests)
-- path/to/file3.ts (updated validation helpers)
+- path/file1.tsx (added X)
+- path/file2.test.tsx (added tests)
 
 ## Current State
-- ✅ [What's working and tested]
-- ⚠️  [What's partially done]
-- ❌ [What's not started yet]
+- ✅ [Working and tested]
+- ⚠️  [Partially done]
+- ❌ [Not started]
 
-## What's Next
-1. [Immediate next task]
+## Next
+1. [Immediate task]
 2. [Following task]
-3. [After that]
 
 ## Patterns Established
-- Matching SignupForm.tsx pattern for auth components
-- Using utils/validation.ts helpers (not reinventing)
-- Tests follow AuthForm.test.tsx structure
+- Matching X pattern for Y components
+- Using Z helpers (not reinventing)
 
 ## Questions/Blockers
-- [ ] @engineer-name: Question about error handling approach
-- [ ] Need design review on error states
+- @name: Question about X
 
 ## Commits
-- abc123: Add login form component
-- def456: Add login form tests
-- ghi789: Update validation helpers
+- abc123: Description
 ```
 
-### For Solo Projects
+### Solo Project Template
 
 ```markdown
 # [Date] - [Feature]
@@ -154,178 +84,152 @@ Related to: [Linear issue, PR, etc.]
 ## Done
 - [Task 1]
 - [Task 2]
-- [Task 3]
 
 ## Working
-- [Feature] works for happy path
+- [What works]
 - Tests passing
-- Ready to add error handling
 
 ## Next
-1. [Next task]
-2. [After that]
+1. [Task]
+2. [Task]
 
 ## Notes
-- Using [pattern] approach because [reason]
-- Files: [list of main files touched]
+- Using X approach because Y
 ```
 
-## Starting a Fresh Session
+## Starting Fresh Session
 
-### Step 1: Tell Claude to Load Context
+### Step 1: Load Context
 
-**For team projects (Balance):**
+**Team project:**
 ```markdown
-I'm continuing work on [feature name].
+Continuing [feature] for [project].
 
 Context:
-- Read .claude/sessions/2025-11-26-login-feature.md
-- Read pm-who-codes.md for working philosophy
-- Read quality-gates.md for commit checklist
+- Read .claude/sessions/YYYY-MM-DD-feature.md
+- Read pm-who-codes.md and quality-gates.md
 
-Current task: [What you're working on next]
+Task: [What you're working on]
 ```
 
-**For solo projects:**
+**Solo project:**
 ```markdown
-Continuing work on [project name].
+Continuing [project].
 
 Context:
-- Read dev-log.md for what I did last session
-- Read solo-project-standards.md for approach
-- Read quality-gates.md for commit checklist
+- Read dev-log.md
+- Read solo-project-standards.md and quality-gates.md
 
-Next: [What you're working on]
+Next: [Task]
 ```
 
-### Step 2: Verify Claude Has Context
+### Step 2: Verify Context
 
-Ask Claude to confirm what it knows:
 ```
-Before we start, confirm you understand:
+Confirm you understand:
 - What I accomplished last session
-- What patterns we established
+- Patterns we established
 - What we're working on next
 ```
 
-If Claude's summary is accurate, proceed. If not, clarify before coding.
+### Step 3: Break Down Task
 
-### Step 3: Break Down Next Task
-
-Even though you have session notes, still break down the next task:
 ```
-Let's break down "add error handling to login form" into small tasks.
-Use TodoWrite to track them.
+Break down "[next task]" into small tasks.
+Use TodoWrite to track.
 ```
 
-## Practical Examples
+## Git as Documentation
 
-### Example: Balance Coding Session
+Your frequent commits are also documentation:
 
-**End of Session:**
 ```bash
-# After completing login form, tests, and validation updates
-# Create session notes
-code .claude/sessions/2025-11-26-login-feature.md
+git log --oneline -10  # See recent work
+git diff HEAD~5..HEAD  # See changes
+```
 
-# Document: what I did, what's next, patterns, questions
-# Commit the session notes
-git add .claude/sessions/2025-11-26-login-feature.md
-git commit -m "Session notes: login feature progress"
+Tell Claude: `Run git log --oneline -10 to see last session progress.`
 
-# Push so it's backed up
+## Examples
+
+### Balance - End Session
+
+```bash
+# Create notes
+code .claude/sessions/2025-11-26-login.md
+# Document: done, next, patterns, questions
+# Commit
+git add .claude/sessions/2025-11-26-login.md
+git commit -m "Session notes: login progress"
 git push
 ```
 
-**Next Day - Fresh Session:**
+### Balance - Start Fresh
+
 ```markdown
-Continuing work on login feature for Balance.
+Continuing Balance login feature.
 
 Context:
-- Read .claude/sessions/2025-11-26-login-feature.md
-- Read pm-who-codes.md and quality-gates.md
-- This is a team project with senior engineers
+- Read .claude/sessions/2025-11-26-login.md
+- Read pm-who-codes.md, quality-gates.md
+- Team project with senior engineers
 
-Next task: Add error state handling to login form
+Next: Add error handling to login form
 
-Let's start by confirming you understand where we left off,
-then break down the error handling into small tasks.
+Confirm understanding, then break down into small tasks.
 ```
 
-### Example: Solo Project Session
+### Solo - End Session
 
-**End of Session:**
 ```bash
-# Append to dev-log.md
-echo "## Nov 26 - User Auth
-- Added basic auth flow
-- Tests passing for happy path
-- Next: Add error handling
+# Append to log
+echo "## Nov 26 - Auth
+- Basic auth flow done
+- Tests passing
+- Next: Error handling
 " >> dev-log.md
 
-# Commit
 git add dev-log.md
-git commit -m "Update dev log: auth progress"
+git commit -m "Dev log: auth progress"
 ```
 
-**Next Session:**
+### Solo - Start Fresh
+
 ```markdown
-Continuing my solo project [name].
+Continuing [project].
 
 Context:
-- Read dev-log.md for recent progress
-- Read solo-project-standards.md for approach
-- Read quality-gates.md for commit checklist
+- Read dev-log.md
+- Read solo-project-standards.md, quality-gates.md
 
-Next: Add error handling to auth flow
+Next: Add error handling to auth
 
-Let's break this down into small tasks and get started.
-```
-
-## Using Git History as Documentation
-
-Since you commit after every small task, your git history is also documentation:
-
-```bash
-# See what you did in last session
-git log --oneline -10
-
-# See what changed
-git diff HEAD~5..HEAD
-
-# Start fresh session with this context
-```
-
-Tell Claude:
-```
-Run git log --oneline -10 to see what I accomplished last session.
-Let's continue from there.
+Break into small tasks.
 ```
 
 ## Quick Reference
 
-### When to restart:
+**When to restart:**
 - After 2-3 major features
-- When quality feels lower
+- When quality drops
 - When Claude forgets context
 
-### Before restarting:
+**Before restarting:**
 1. Document what you did
 2. Document what's next
-3. Save in project (.claude/sessions/ or dev-log.md)
+3. Save in project
 4. Commit and push
 
-### Starting fresh:
+**Starting fresh:**
 1. Tell Claude to read session notes
 2. Tell Claude to read memory system files
 3. Verify Claude has context
 4. Break down next task
-5. Start coding
 
-### Team vs Solo:
-- **Team:** More detailed session notes, questions for team, commit notes file
-- **Solo:** Simpler dev-log.md, focus on what you did and what's next
+**Team vs Solo:**
+- **Team:** Detailed notes, questions for team, commit notes file
+- **Solo:** Simpler dev-log.md, focus on done/next
 
 ---
 
-**Remember:** The goal isn't perfect documentation. The goal is enough context to pick up where you left off with a fresh Claude session that knows what you're doing.
+**Goal:** Enough context to pick up where you left off with fresh Claude that knows what you're doing.
