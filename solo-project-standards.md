@@ -153,7 +153,7 @@ If yes → **refactor before shipping**
 Your solo project is good when:
 - ✅ You can explain what any part does without looking at it
 - ✅ Core features work reliably
-- ✅ No obvious tech debt
+- ✅ Code quality you're proud of
 - ✅ Someone else could pick it up and modify it
 - ✅ You're proud to show it to someone
 

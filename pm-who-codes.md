@@ -31,9 +31,9 @@ Non-negotiable rule:
 
 If Claude suggests committing without passing checks → **STOP and run checks first**
 
-### 3. Value > Speed
+### 3. Quality > Speed
 
-Shipping fast is good. Shipping tech debt is not.
+Shipping fast is good. Shipping sloppy code is not.
 
 Before pushing code, ask:
 - **Is this creating more work than it saves?**
@@ -121,7 +121,7 @@ You're doing this right when:
 - ✅ Code reviews focus on product decisions, not code quality issues
 - ✅ Senior engineers aren't cleaning up after you
 - ✅ Your code is maintainable 6 months later
-- ✅ You're shipping value, not creating debt
+- ✅ You're shipping quality code that creates value
 
 ---
 

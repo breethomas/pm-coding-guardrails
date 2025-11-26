@@ -39,8 +39,8 @@ A set of practical guidelines for PMs to code responsibly with AI assistance, wh
 
 - **PMs learning to code** with AI assistance
 - **PMs working in shared codebases** with engineering teams
-- **Product builders** who need to ship features without creating tech debt
-- **Anyone using AI to code** who wants to maintain quality and respect team conventions
+- **Product builders** who want to ship responsibly with maintainable code
+- **Anyone using AI to code** who wants to avoid sloppy code that fails CI or doesn't match patterns
 
 ## How to Use
 
@@ -83,7 +83,7 @@ Fork this repo and adapt the guidelines to your team's:
 
 1. **Consistency > Personal Preference** - Match existing patterns exactly
 2. **CI Must Pass Locally First** - Never push code that fails checks
-3. **Value > Speed** - Shipping tech debt isn't shipping value
+3. **Quality > Speed** - Shipping sloppy code isn't shipping value
 4. **Test Before Ship** - Untested code is broken code
 5. **Know When to Ask** - Better to ask than create cleanup work
 
@@ -150,4 +150,4 @@ CC BY-NC-SA 4.0 - Free to use for personal and internal business use with attrib
 
 ---
 
-Built for PMs who want to code responsibly with AI. Ship value, not tech debt.
+Built for PMs who want to code responsibly with AI. Ship features with quality and intention.
