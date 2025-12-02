@@ -63,23 +63,32 @@ You're not expected to know everything. Ask before:
 
 ### 6. Discover Before Building
 
-**Before adding new infrastructure, search for existing mechanisms.**
+**Before adding new code, scripts, or workflows, search for existing patterns.**
 
-Cross-cutting concerns (timezone, locale, auth, user context) are almost never novel problems. Before proposing a solution:
+This applies to:
+- **Cross-cutting concerns** - timezone, auth, user context, logging
+- **Operational workflows** - migrations, deployments, scripts, one-time tasks
+- **Common utilities** - helpers, formatters, validators
 
-1. **Search for the concern** - grep for "timezone", "locale", etc.
-2. **Check headers/middleware** - These concerns often live there
-3. **Ask "how does X handle this?"** - Find a similar feature that needs the same context
+Before proposing a solution:
+
+1. **Ask "how does the team currently do this?"**
+2. **Search for existing patterns** - grep for related terms, check bin/, lib/tasks/, terraform/
+3. **Look at similar past work** - git log, existing migrations, deploy configs
+4. **Check infrastructure files** - Terraform, CI/CD, Dockerfiles
 
 **Red flags that you're about to duplicate:**
+- Building a new script for a one-time operation
+- Adding a new bin/ command or rake task
+- "I'll create a helper to..."
 - Adding a new field to pass context from client to server
 - Building new middleware for a common concern
-- "I need to pass the user's [timezone/locale/auth info]"
 
 **Instead:**
-- "How does the codebase currently handle timezone?"
-- "Is there an existing mechanism for passing user context?"
-- Search before architecting
+- "How does the codebase currently handle this?"
+- "Is there an existing workflow for running migrations?"
+- "What's the team's pattern for X?"
+- Search before architecting, script before building
 
 ## Working with Claude
 
