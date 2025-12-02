@@ -61,6 +61,26 @@ You're not expected to know everything. Ask before:
 
 **It's better to ask than to create work for others cleaning up your code.**
 
+### 6. Discover Before Building
+
+**Before adding new infrastructure, search for existing mechanisms.**
+
+Cross-cutting concerns (timezone, locale, auth, user context) are almost never novel problems. Before proposing a solution:
+
+1. **Search for the concern** - grep for "timezone", "locale", etc.
+2. **Check headers/middleware** - These concerns often live there
+3. **Ask "how does X handle this?"** - Find a similar feature that needs the same context
+
+**Red flags that you're about to duplicate:**
+- Adding a new field to pass context from client to server
+- Building new middleware for a common concern
+- "I need to pass the user's [timezone/locale/auth info]"
+
+**Instead:**
+- "How does the codebase currently handle timezone?"
+- "Is there an existing mechanism for passing user context?"
+- Search before architecting
+
 ## Working with Claude
 
 Claude is your pair programmer, but you're responsible for:
