@@ -174,7 +174,7 @@ Guide me through this session.
 3. **Quality > Speed** - Shipping sloppy code isn't shipping value
 4. **Test Before Ship** - Untested code is broken code
 5. **Know When to Ask** - Better to ask than create cleanup work
-6. **Discover Before Building** - Search for existing mechanisms before adding infrastructure
+6. **Discover Before Building** - Search for existing patterns before adding new code
 
 ## Key Practices from Engineering Teams
 
