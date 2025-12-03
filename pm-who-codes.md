@@ -61,7 +61,25 @@ You're not expected to know everything. Ask before:
 
 **It's better to ask than to create work for others cleaning up your code.**
 
-### 6. Discover Before Building
+### 6. Prompt Engineering Needs Process
+
+**When modifying AI prompts, load the prompt-engineering skill FIRST.**
+
+This is different from regular coding:
+- **Prompts affect user-facing AI behavior** - bugs are visible to users immediately
+- **Failure modes are subtle** - the AI might "work" but do the wrong thing
+- **Side effects cascade** - fixing one behavior can break another
+
+Before touching any prompt file:
+1. Invoke the prompt-engineering skill
+2. Review the 6-step framework
+3. Identify related edge cases (not just the one that broke)
+4. Check for dependent operations that could fail in parallel
+5. Define how you'll test the fix
+
+See quality-gates.md for the full checklist.
+
+### 7. Discover Before Building
 
 **Before adding new code, scripts, or workflows, search for existing patterns.**
 

@@ -49,6 +49,33 @@ Run this before EVERY commit, regardless of project:
 3. Verify everything passes
 4. THEN commit and push
 
+## Prompt Engineering Checklist
+
+**When modifying AI prompts (system prompts, agent prompts, etc.):**
+
+### Before Making Changes
+- [ ] **Load prompt-engineering skill** - Invoke the skill to have the framework available
+- [ ] **Identify the failure mode clearly** - What specific behavior are you fixing?
+- [ ] **Search for related edge cases** - What OTHER operations could have the same problem?
+- [ ] **Check for dependent operations** - Do any mutations/actions require outputs from other actions?
+
+### When Making Changes
+- [ ] **Use hard constraints (NEVER) over soft guidance** - "Never do X" is more reliable than "Be careful about X"
+- [ ] **Provide specific BAD/GOOD examples** - Concrete examples beat abstract rules
+- [ ] **Add constraints in multiple locations** - Put critical rules in both hard_constraints AND relevant sections
+- [ ] **Consider if LLM should self-improve** - For complex changes, use the meta-prompt from the skill
+
+### After Making Changes
+- [ ] **Define success criteria** - How will you know if this fix worked?
+- [ ] **Test the failure mode** - Reproduce the original issue and verify it's fixed
+- [ ] **Test related scenarios** - Check that fixing one thing didn't break another
+
+### Dependent Operation Pattern
+When an AI can call multiple tools, always check:
+- Does Tool B require an ID or output from Tool A?
+- Can Tool A and Tool B be called in parallel? (If yes + dependency = data loss)
+- Add explicit "NEVER call X and Y in the same response" constraints
+
 ## Project-Specific Checks
 
 Different projects have different requirements. See project CLAUDE.md for:

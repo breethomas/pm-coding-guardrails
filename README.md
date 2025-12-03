@@ -28,6 +28,7 @@ A set of practical guidelines for PMs to code responsibly with AI assistance, wh
 - Checkpoint strategy for frequent commits
 - How to initialize coding sessions with AI
 - CI/CD readiness standards
+- Prompt engineering checklist for AI prompt modifications
 
 **[solo-project-standards.md](solo-project-standards.md)** - Standards for solo projects
 - Keep it simple, lean, and maintainable
@@ -174,7 +175,8 @@ Guide me through this session.
 3. **Quality > Speed** - Shipping sloppy code isn't shipping value
 4. **Test Before Ship** - Untested code is broken code
 5. **Know When to Ask** - Better to ask than create cleanup work
-6. **Discover Before Building** - Search for existing patterns before adding new code
+6. **Prompt Changes Need Process** - Load prompt-engineering skill before modifying AI prompts
+7. **Discover Before Building** - Search for existing patterns before adding new code
 
 ## Key Practices from Engineering Teams
 
