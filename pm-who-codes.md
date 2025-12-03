@@ -63,7 +63,7 @@ You're not expected to know everything. Ask before:
 
 ### 6. Prompt Engineering Needs Process
 
-**When modifying AI prompts, load the prompt-engineering skill FIRST.**
+**When modifying AI prompts, review [prompt-engineering.md](prompt-engineering.md) FIRST.**
 
 This is different from regular coding:
 - **Prompts affect user-facing AI behavior** - bugs are visible to users immediately
@@ -71,13 +71,12 @@ This is different from regular coding:
 - **Side effects cascade** - fixing one behavior can break another
 
 Before touching any prompt file:
-1. Invoke the prompt-engineering skill
-2. Review the 6-step framework
-3. Identify related edge cases (not just the one that broke)
-4. Check for dependent operations that could fail in parallel
-5. Define how you'll test the fix
+1. Review the 6-step framework in prompt-engineering.md
+2. Identify related edge cases (not just the one that broke)
+3. Check for dependent operations that could fail in parallel
+4. Define how you'll test the fix
 
-See quality-gates.md for the full checklist.
+See quality-gates.md for the pre-commit checklist.
 
 ### 7. Discover Before Building
 

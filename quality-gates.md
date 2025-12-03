@@ -54,7 +54,7 @@ Run this before EVERY commit, regardless of project:
 **When modifying AI prompts (system prompts, agent prompts, etc.):**
 
 ### Before Making Changes
-- [ ] **Load prompt-engineering skill** - Invoke the skill to have the framework available
+- [ ] **Review prompt-engineering.md** - Have the 6-step framework available
 - [ ] **Identify the failure mode clearly** - What specific behavior are you fixing?
 - [ ] **Search for related edge cases** - What OTHER operations could have the same problem?
 - [ ] **Check for dependent operations** - Do any mutations/actions require outputs from other actions?

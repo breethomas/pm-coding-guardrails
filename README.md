@@ -30,6 +30,12 @@ A set of practical guidelines for PMs to code responsibly with AI assistance, wh
 - CI/CD readiness standards
 - Prompt engineering checklist for AI prompt modifications
 
+**[prompt-engineering.md](prompt-engineering.md)** - Prompt optimization framework
+- The 6-step optimization framework for production prompts
+- Battle-tested production prompt template
+- The 3 fatal mistakes (and how to avoid them)
+- Dependent operation pattern for tool-calling AI
+
 **[solo-project-standards.md](solo-project-standards.md)** - Standards for solo projects
 - Keep it simple, lean, and maintainable
 - The 6-month test (will future you understand this?)
@@ -175,7 +181,7 @@ Guide me through this session.
 3. **Quality > Speed** - Shipping sloppy code isn't shipping value
 4. **Test Before Ship** - Untested code is broken code
 5. **Know When to Ask** - Better to ask than create cleanup work
-6. **Prompt Changes Need Process** - Load prompt-engineering skill before modifying AI prompts
+6. **Prompt Changes Need Process** - Review prompt-engineering.md before modifying AI prompts
 7. **Discover Before Building** - Search for existing patterns before adding new code
 
 ## Key Practices from Engineering Teams
