@@ -107,6 +107,39 @@ Before proposing a solution:
 - "What's the team's pattern for X?"
 - Search before architecting, script before building
 
+### 8. Plan Big Work in Phases
+
+**For multi-day or multi-step work, create a punch list document.**
+
+Structure it by dependencies:
+1. **Environment/infrastructure first** - fix what blocks accurate testing
+2. **Bug fixes second** - clear blockers before polish
+3. **Polish third** - UI, UX improvements
+4. **Testing last** - verify everything works
+
+Update the document as you work:
+- Mark items complete with dates
+- Add findings/decisions inline
+- Create issues for deferred items
+
+A punch list keeps you focused and gives visibility into progress.
+
+### 9. Clean Up Before Milestones
+
+**Before major pushes (releases, submissions), do a housekeeping pass.**
+
+Remove:
+- Stale documentation that no longer reflects reality
+- Test artifacts and simulation files from past debugging
+- Commented-out code and abandoned experiments
+
+Keep:
+- The source of truth (actual prompts, current configs)
+- Session notes and decision logs
+- Active test scenarios
+
+The best time to clean up is before shipping, not after.
+
 ## Working with Claude
 
 Claude is your pair programmer, but you're responsible for:
